@@ -1,6 +1,9 @@
 #self domain
 
-DOMAIN-KEYWORD,163
+DOMAIN-SUFFIX,163.com
+DOMAIN-SUFFIX,163.net
+DOMAIN-SUFFIX,126.com
+DOMAIN-SUFFIX,126.net
 DOMAIN-SUFFIX,uidev.tech
 DOMAIN-SUFFIX,beijing.gov.cn
 DOMAIN-SUFFIX,zhongchebaolian.com
