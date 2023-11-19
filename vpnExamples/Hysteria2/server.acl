@@ -1,3 +1,0 @@
-reject(geoip:cn)
-cf_proxy(*.openai.com)
-direct(all)
