@@ -1,0 +1,80 @@
+{
+ "routing": {
+    "domainStrategy": "IPIfNonMatch",
+    "rules": [
+      {
+        "type": "field",
+        "ip": [
+          "geoip:cn"
+        ],
+        "outboundTag": "block"
+      },
+      {
+       	"type": "field",
+        "outboundTag": "cf_proxy",
+        "domain": [
+          "geosite:openai"
+        ]
+      }
+    ]
+  },
+    "inbounds": [ 
+        {
+            "listen": "0.0.0.0",
+            "port": 443,
+            "protocol": "vless",
+            "settings": {
+                "clients": [
+                    {
+                        "id": "efa43b93-a184-43f0-a3e6-bc857abd093f",
+                        "flow": "xtls-rprx-vision"
+                    }
+                ],
+                "decryption": "none"
+            },
+            "streamSettings": {
+                "network": "tcp",
+                "security": "reality",
+                "realitySettings": {
+                    "show": false,
+                    "dest": "8003",
+                    "xver": 1,
+                    "serverNames": [
+                      "store.fgufcwk.icu"
+                    ],
+                    "privateKey": "AHk_Zj-eG4WKHS4Q77RTrdWJwrp_z--AKtsly0PPsGk",
+                    "minClientVer": "",
+                    "maxClientVer": "",
+                    "maxTimeDiff": 0,
+                    "shortIds": [
+                        "",
+                        "0123456789abcdef"
+                    ]
+                }
+            }
+	}
+    ],
+  "outbounds": [
+    {
+      "protocol": "freedom",
+      "tag": "direct"
+    },
+    {
+      "tag": "cf_proxy",
+      "protocol": "socks",
+      "settings": {
+        "servers": [
+          {
+            "address": "127.0.0.1",
+            "port": 40000
+          }
+	]
+      }
+    },
+    {
+      "protocol": "blackhole",
+      "tag": "block"
+    }
+  ]
+}
+

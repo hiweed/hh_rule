@@ -1,0 +1,19 @@
+# listen: :443 
+
+tls:
+  cert: /etc/v2ray/v2ray.crt 
+  key: /etc/v2ray/v2ray.key
+
+bandwidth:
+  up: 50 mbps
+  down: 50 mbps
+
+auth:
+  type: password
+  password: AHk_Zj-eG4WKHS4Q77RTrdWJwrp_z--AKtsly0PPsGk
+
+masquerade: 
+  type: proxy
+  proxy:
+    url: https://127.0.0.1:8003
+    rewriteHost: true
